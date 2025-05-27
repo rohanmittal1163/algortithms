@@ -1,0 +1,187 @@
+Graph is related to connections, Cities and roads.
+It is a non linear data structure
+It is made up of two components - Vertices(nodes) and Edges(links)
+Denotion G(V,E)
+
+Representation
+    Adjacency Matrix
+    Adjacency Linked list
+
+Key Terms
+    Parallel edges / Multiple edges - >=2 edges connect the same pair of vertices.
+
+    Path - No repeated edges or vertices | open walk
+        
+    Circuit - No repeated edges | Closed walk
+        
+    Articulation Point / Cut Vertex - When removed gives disconnected components
+        Tarjan's algorithm
+
+    Topological Ordering - Linear ordering of DAG vertices.
+
+
+
+
+Types of Graphs
+
+    Trivial graph - only one vertex
+
+    Null graph - No edges only vertices
+
+    Complete Graph
+        Denotion: Kn
+        Formula: nCr(n,2) edges | n-1 degree of each vertex
+
+    Regular graph - Every vertex has same number of degree. Ex-Complete graph
+        Denotion - n Regular graph ; n represent the degree
+        Formula - E = n*v/2
+
+    Cycle graph - All Vertices(min 3) form one Cycle. Simple Connected Undirected
+        Tip - Degree - min(2)
+
+    Cyclic graph - may have multiple cycle in it
+
+    Acyclic graph - No Cycles
+
+    Weighted graph - Having + or - weights on edges
+
+    Simple Graph - No parallel edges | No self loop
+
+    Multigraph - Allow multiple edges
+
+    Connected graph - Undirected | No disconnected Components
+
+    Strongly Connected Graph - Directed | No disconnected Components
+
+    Disconnect Graph - Have >=1 Disconnected components
+
+    Bipartite Graph - Two disjoint sets of vertices with no edges within each set.
+        Acyclic or even cyclic graph are bipartite graph
+    
+    Functional Graph - each node has only one outgoing edge.
+
+Spanning Tree - subgraph with no cycle, Connected, All vertices, V-1 edges
+
+    Formula - 
+        Cayley theorm - no. of spanning trees for a complete graph (Kn) = n^(n-2)
+
+    Algorithm 
+        prims
+        kruskals
+        Borůvka’s 
+
+Topological Sort - Thing need to do before something | prerequisites
+    Kahn's Algorithm O(V+E) O(V)
+    DFS
+
+Detect Cycle
+    Undirected - 
+        Union find kruskals
+        BFS
+        DFS
+    Directed-
+        Kahn's algo
+    -ve cycle-
+        Bellman Ford algo
+        Floyd warshall algo
+
+Identify Cycle length - 
+    Functional Graph
+        Disconnected - 
+            Union Find + tortoise_hare algorithm O(N)
+            Topological sort O(N)
+            dfs
+        Connected
+            tortoise_hare algorithm
+            Topological Sort
+            dfs
+    Directed Graph -
+        DFS
+    Undirected Graph - 
+        BFS (Only for shortest)
+            Formula - depth[v] + depth[u] + 1
+    Cycle of length N
+        DFS
+
+Shortest path - from one vertex to other vertex
+    Negative Weight - Bellman Ford algo O(VE)
+    Positive Weight 
+        Undirected 
+            Non weighted or 1-weighted - BFS
+            Weighted - Djiktras algo
+            01 weight - BFS with deque (just change if 0 pushfront else pushback)
+        Directed - Kahn's Algo
+
+Minimum Spanning Tree - Spanning tree with minimum weight | not unique
+    Algo-
+        Prims - node based | minheap | greedy algo | connected graph | sparse
+        Kruskals - edge based | DSU | disconnected graph | dense
+
+Strongly connected components -
+    kosaraju's Algorithm
+
+Find bridges in graph | Articulation point / cut vertex - 
+    tarjan's algorithm
+
+Divide nodes into groups so that no group contain internal edge
+    Directed Acyclic - Height => minimum
+    Undirected - Bipartiteness  + height => maximum
+
+EULER
+    Eulerian path -
+        Visited all the edges of the graph at once
+        Not all graphs have eulerian path
+        single connected component is must other wise there should not be edges in other connected component
+        degree of start and end is odd else is even
+
+    Eulerian circuit/cycle - 
+        Starts and ends from the same node visiting all edges once
+        if graph has then u can start from any node
+        single connected component is must other wise there should not be edges in other connected component
+        degree of every node is even
+
+    Undirected
+        path circuit
+        0     0    non Eulerian graph odd degree vertex >2
+        0     1    x
+        1     0    semi eulerian graph - odd degree vertex - 2
+        1     1    Eulerian graph - odd degree vertex - 0
+    
+    Directed   
+        path circuit
+        0     0    non Eulerian graph 
+        0     1    x
+        1     0    semi eulerian graph - cnt(indeg - outdeg == 0)=n-2 && cnt(indeg-outdeg=1)=1 -> sink && cnt(outdeg-indeg=1)=1 -> source
+        1     1    Eulerian graph - cnt(indeg - outdeg == 0)=n
+        
+
+    For disconnected 
+        the number of components having size > 1 should be <= 1
+        then check degree
+    
+    Algorithm-
+        HeirHolzer's Algorithm O(V+E) O(V+E)
+
+
+
+Formulas:
+    When Two Trees are merged 
+        minimum new Diameter = max(d1,d2,(d1+1)/2+(d2+1)/2+1)
+
+Tips:
+    Whenever there is a maxTime argument in question do think of dp[V+1][MaxTime+1] => first queue then priority queue
+    Think of priority queue vs queue (if order is same the use queue)
+    C++ doesn't support passing multi-dimensional arrays with unspecified sizes like int dp[][][][] in function parameters. use vector only
+    Always think about the graph | djiktras | bfs | union find when move in matrix from 0 0 to n-1 m-1
+    to avoid time complexity use ios::sync_with_studio(false);cin.tie(0) and push_back is expensive then []
+    iota(parent.begin(), parent.end(), 0); use this parent[i]=i;
+    if a graph is divided into group its nothing but a sign of bipartite check
+
+
+Important questions
+    Cheapest flight within k distances
+    Minimum multiplications to reach end
+    Minimum time to reach destination
+    Number of ways to reach at destination
+    Second minimum time to reach
+    Evaluate division
