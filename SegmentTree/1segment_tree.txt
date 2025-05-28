@@ -1,0 +1,55 @@
+Efficient querying and updating of intervals or segments of an array.
+
+Involving range queries, such as finding the sum, minimum, maximum, or any other operation over a 
+specific range of elements in an array.
+
+The tree is built recursively by dividing the array into segments until each segment 
+represents a single element.
+
+The operations that the segment tree can perform must be binary and associative
+
+Segment tree will be a complete binary tree if n is a power of 2
+
+Examples:
+    Finding Range Sum Queries -> use prefix sum
+    Searching index with given prefix sum
+    Finding Range Maximum/Minimum
+    Counting frequency of Range Maximum/Minimum
+    Finding Range GCD/LCM
+    Finding Range AND/OR/XOR
+    Finding number of zeros in the given range or finding index of Kth zero
+
+
+if point updates, segments , range , Queries are there then think of segment tree
+if time complexity is high think of segment tree
+
+Left Idx = 2 * idx + 1
+Right Idx = 2 * Idx + 2
+
+Segment Tree size 
+    if n is power of 2 
+        4 * n + 1; 
+    else
+        2 * n + 1
+
+Time Complexity
+    Build: O(n)
+    Query: O(log n)
+    Update: O(log n)
+
+METHODOLOGY
+    Build Tree
+    Query 
+        Point
+            Update - if else
+        Range
+            Update
+            Query
+
+Range maximum index query CodestorywithMIK
+   right range me max element ka index
+   right range me element ka index which is >arr[a] and >arr[b]
+   right range me element ka index which is >arr[a] and >arr[b] as left as possible - BS
+
+
+left most valid chahiye and binary search lagane ka mnn kare or order me na ho to think of segment tree
