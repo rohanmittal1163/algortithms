@@ -99,11 +99,11 @@ public:
 
         if (l <= start && end <= r)
         {
-            seg[idx] = (end - start + 1) * lazy[idx];
+            seg[idx] = (end - start + 1) * val;
             if (start != end)
             {
-                lazy[2 * idx + 1] += lazy[idx];
-                lazy[2 * idx + 2] += lazy[idx];
+                lazy[2 * idx + 1] += val;
+                lazy[2 * idx + 2] += val;
             }
             return;
         }

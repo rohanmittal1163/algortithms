@@ -1,0 +1,96 @@
+2 Player game 
+Perfect Information
+Optimal moves
+win or lose or draw
+
+
+One two Three game
+    a person can remove 1 or 2 from the stick
+    if(n%(a+b)==0) second player else first player
+
+nim game
+    xor == 0 second player else first player
+
+The Prisoner's Dilemma 
+    is a famous example in game theory that shows why two rational individuals might not cooperate, 
+    even if it seems that cooperation is in their best interest.
+
+    Two prisoners are arrested. Each has two options:
+
+    Cooperate (C) with the other and stay silent.
+
+    Defect (D) and betray the other.
+
+    Payout Matrix (Years in Jail):
+                    Prisoner B: C	Prisoner B: D
+    Prisoner A: C	A: 1, B: 1	    A: 3, B: 0
+    Prisoner A: D	A: 0, B: 3	    A: 2, B: 2
+
+    If both cooperate, they get 1 year each.
+
+    If one defects, the defector goes free, and the other gets 3 years.
+
+    If both defect, both get 2 years.
+
+
+Strategy – Finder-Keeper Game
+
+    Two players A and B play a game in which a certain number of coins are placed on the table.
+
+    - Each player can pick at least 'a' and at most 'b' coins during their turn.
+    - If fewer than 'a' coins are left, the player must pick all the remaining coins.
+
+    1. Finder-Winner Game
+    ---------------------
+    > The player who picks the last coin wins.
+
+    Strategy:
+    - Reduce the opponent to a state with coins equal to:
+    (a + b) × k
+    - This is a losing state for the opponent.
+
+    2. Keeper-Loser Game
+    --------------------
+    > The player who picks the last coin loses.
+
+    Strategy:
+    - Reduce the opponent to a state with coins equal to:
+    (a + b) × k + x, where 1 ≤ x ≤ a
+    - This is a losing state for the opponent.
+
+    Examples
+    ========
+
+    Example 1:
+    ----------
+    Game type: Finder-Winner
+    a = 2, b = 6, Total coins = 74
+    Target losing state = 8 × k  = 72
+    Initial move: A should pick 74 - 72 = 2 coins
+
+    Example 2:
+    ----------
+    Game type: Keeper-Loser
+    a = 3, b = 5, Total coins = 92
+    Target losing state = 8 × k + x, where 1 ≤ x ≤ 3
+    Try values:
+    - 8×11 + 6 = 94 Awin
+    - 8×11 + 4 = 92 Awin
+    - 8×9  + 4 = 76 Awin
+    - 8*8  + 2 = 66 Bwin
+    Best match: 75
+    Initial move: A should pick 92 - 75 = 17 coins
+
+    Example 3:
+    ----------
+    Game type: Finder-Winner
+    a = 1, b = 6, Total coins = 56
+    Since 56 is a multiple of 7 (a + b), it's a losing state.
+    => A will lose no matter what.
+
+    Example 4:
+    ----------
+    Game type: Keeper-Loser
+    a = 3, b = 6, Total coins = 126
+    Target losing state: 9 × k + 0, 1 ≤ x ≤ 3
+    Awins

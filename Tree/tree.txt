@@ -1,0 +1,84 @@
+Trees
+    Non linear data structure
+    Heirarichal model
+
+Two types of nodes are there
+    External (Leaf)
+    Internal 
+
+Level - starts from 1
+Height and depth are same thing - starts from 0
+
+Usage:
+    Routing algorithms
+    DOM in HTML
+    File explorer
+
+Searching - LL < Trees < arrays
+Insertion and Deletion - arrays < Trees < LL
+
+
+Types pf Trees
+
+Binary Trees            
+    having degree <= 2
+
+Full Binary Trees | proper | strict
+    either 0 or 2 nodes
+
+Complete  Binary tree 
+    all levels are completed and last level has nodes as left as possible
+
+Perfect Binary tree
+    all leaf nodes are at the same level
+
+Balanced Binary Trees
+    max height - O(logn)
+    height(node->left) - height(node->right) <= 1
+
+Degenerate Trees
+    Like a linked list
+    Degree is either 0 or 1
+    Two Types       
+        Left or  right
+
+Catalan Numbers 
+    1 1 2 5 14 42
+
+    2ncn/(n+1)
+    For programming
+    cn = cn-1 * (4n-2)/(n+1)
+
+
+    | Application                      | **What it means (in simple terms)**                                                                                     |
+    | -------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+    | **1. Valid Parentheses**         | Number of ways to correctly match `n` pairs of `()`<br>➡️ For `n = 3`: `((()))`, `(()())`, `(())()`, `()(())`, `()()()` |
+    | **2. Binary Search Trees (BST)** | Number of different BSTs you can make using `n` distinct keys<br>➡️ For 3 nodes (1,2,3), 5 unique BSTs              |
+    | **3. Triangulation of Polygon**  | Ways to divide a polygon into triangles using non-crossing diagonals<br>➡️ A polygon with `n+2` sides has `Cn` ways     |
+    | **4. Stack Permutations**        | Ways elements can be pushed/popped in a stack and still be valid                                                        |
+    | **5. Full Binary Trees**         | Number of full binary trees with `n` internal nodes (each node has 0 or 2 children)                                 |
+    | **6. Mountain Ranges**           | Number of ways to draw mountains with `n` upstrokes and `n` downstrokes that never go below the start                   |
+    | **7. Dyck Words**                | Number of binary strings of 2n bits with equal 0s and 1s such that no prefix has more 1s than 0s                        |
+
+
+Traversal
+    Inorder (left root right) - recursive | Iterative | morris
+    Preorder (root left right) - recursive | Iterative | morris
+    Postorder (left right root) - recursive | Iterative | morris
+    BFS
+    DFS 
+    level order 
+    zig zag / spiral
+
+    Iterative uses extra space (stack) than morris (binray threading)
+
+Number of Binary trees
+
+    | Given Traversals            | Number of Binary Trees |
+    | --------------------------- | ---------------------- |
+    | Inorder only                | Infinite               |
+    | Preorder + Inorder          | 1                      |
+    | Postorder + Inorder         | 1                      |
+    | Preorder + Postorder        | Multiple (not unique)  |
+    | All three (Pre + In + Post) | 1                      |
+
