@@ -11,6 +11,9 @@
         "ostream": "cpp",
         "bitset": "cpp",
         "memory": "cpp",
-        "future": "cpp"
+        "future": "cpp",
+        "deque": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp"
     }
 }
